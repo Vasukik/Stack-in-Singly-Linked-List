@@ -1,0 +1,112 @@
+
+import java.util.*;
+class node{
+    node next;
+    int data;
+}
+class Main{
+    static node top;
+    static node temp;
+   static Scanner sc = new Scanner(System.in);
+    public static void main(String arg[]){
+        System.out.println("Enter Number of Elements in a stack");
+        int n=sc.nextInt();
+        push(n);
+        while(true){
+            System.out.println("\n 1.display\n 2.pop\n Other choice the code exit\n");
+            int ch=sc.nextInt();
+            switch(ch)
+            {
+        case 1:
+        display();
+        break;
+        case 2:
+        pop();
+        display();
+        break;
+        default:
+        System.out.println("Completed");
+        System.exit(0);
+            
+            }
+        }
+    }
+    
+    static void push(int n){
+        top=new node();
+      top=null;
+        node temp = top;
+        System.out.println("Enter element one By one up to "+n);
+          
+             for (int i = 1; i <= n; i++) {
+              int data=sc.nextInt();
+            node newnode = new node();
+            newnode.data = data;
+            newnode.next = top;
+            top=newnode;
+            
+        }
+        }
+    
+    static void display(){
+       node temp = top;
+       System.out.println("Display");
+        while (temp != null) {
+            
+            System.out.print(temp.data + " ");
+            temp = temp.next;
+        }
+    }
+    static void pop(){
+        
+         if(top!=null){
+             top=top.next;
+             System.out.println("Poped element is " +top.data);
+         }
+         else{
+             System.out.println("empty");
+         }
+         
+    }
+}
+
+
+
+
+OutPut:
+Enter element one By one up to 4
+1 2 3 4
+
+ 1.display
+ 2.pop
+ Other choice the code exit
+
+1
+Display
+4 3 2 1 
+ 1.display
+ 2.pop
+ Other choice the code exit
+
+2
+Poped element is 3
+Display
+3 2 1 
+ 1.display
+ 2.pop
+ Other choice the code exit
+
+2
+Poped element is 2
+Display
+2 1 
+ 1.display
+ 2.pop
+ Other choice the code exit
+
+3
+Completed
+
+
+...Program finished with exit code 0
+Press ENTER to exit console.
